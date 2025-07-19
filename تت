@@ -1,0 +1,20 @@
+#include <Joystick.h>
+
+Joystick_ Joystick;
+
+void setup() {
+  pinMode(2, INPUT_PULLUP);  // زر A
+  pinMode(3, INPUT_PULLUP);  // زر B
+  pinMode(4, INPUT_PULLUP);  // زر X
+  pinMode(5, INPUT_PULLUP);  // زر Y
+
+  Joystick.begin();
+}
+
+void loop() {
+  Joystick.setButton(0, !digitalRead(2)); // A
+  Joystick.setButton(1, !digitalRead(3)); // B
+  Joystick.setButton(2, !digitalRead(4)); // X
+  Joystick.setButton(3, !digitalRead(5)); // Y
+  delay(10);
+}
